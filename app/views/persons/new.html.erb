@@ -1,0 +1,20 @@
+
+<%= form_tag("/persons/create", method: "POST") do %>
+  <%= label_tag(:first_name, "name:") %>
+  <%= text_field_tag(:first_name) %>
+  <%= label_tag(:last_name, " Last name:") %>
+  <%= text_field_tag(:last_name) %>
+  <%= label_tag(:birth_date, "Birthday:") %>
+  <%= text_field_tag(:birth_date) %>
+  <%= label_tag(:description, "Description:") %>
+  <%= text_field_tag(:description) %>
+  <div></div>
+
+  <input type="radio" name="rol" value="Actor" checked> Actor<br>
+  <input type="radio" name="rol" value="Director"> Director<br>
+  <%= submit_tag("Submit") %>
+
+
+
+
+<% end %>
