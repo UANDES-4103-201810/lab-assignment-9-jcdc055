@@ -28,24 +28,17 @@ class PersonsController < ApplicationController
         end
       end
     end
-
+  end
     private
     # Use callbacks to share common setup or constraints between actions.
-    def set_actor
-      @actor = Actor.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def actor_params
-      params.fetch(:actor, {})
-    end
     def set_director
-      @director = Director.find(params[:id])
+      @person = person.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def director_params
-      params.fetch(:director, {})
+      params.require(:person).permit(:first_name, :last_name, :birth_date, :description)
     end
-  end
+
 end

@@ -12,7 +12,7 @@ Rails.application.routes.draw do
 
 
   get '/persons/new', to: 'persons#new'
-  POST '/create', to: 'persons#new'
+  get '/persons/create', to: 'persons#create'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
