@@ -1,7 +1,7 @@
 <h1>New Movie</h1>
 <div class="container">
   <div class="jumbotron">
-    <h1>New Category</h1>
+
     <%= form_for @movie, method: 'POST' do |xx| %>
       <label for="cost1">title</label>
       <div> <%= xx.text_field :title %></div>
@@ -11,6 +11,15 @@
       <div> <%= xx.text_field :duration %></div>
       <label for="cost1">Release Date</label>
       <div> <%= xx.text_field :release_date %></div>
+      <label for="cost1">directors</label>
+      <%= xx.collection_select(:director_id,Director.order(:first_name), :id,:first_name, include_blank: true) %>
+      <label for="cost1">Actors</label>
+      < no supecomo hacerlo funcionar con actor , la relaciones no son las mismas. xx.collection_select(:actor_id, Actor.order(:first_name), :id,:first_name, include_blank: true) >
+
+
+
+
+
 
       <a class="btn btn-primary m-1"  role="button"><%= xx.submit  %></a>
 
