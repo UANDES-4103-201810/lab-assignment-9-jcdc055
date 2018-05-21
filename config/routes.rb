@@ -12,7 +12,10 @@ Rails.application.routes.draw do
 
 
   get '/persons/new', to: 'persons#new'
-  get '/persons/create', to: 'persons#create'
+  post '/persons/create', to: 'persons#create'
+  get '/persons/all', to: 'persons#show_all'
+  get '/persons/actor', to: 'persons#show_actors'
+  get '/persons/director', to: 'persons#show_directors'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

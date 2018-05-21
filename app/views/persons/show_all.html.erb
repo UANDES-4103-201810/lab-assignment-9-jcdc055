@@ -1,0 +1,47 @@
+<div class="container">
+  <h2>Persons</h2>
+
+  <table class="table table-dark table-hover">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Lastname</th>
+      <th>Type</th>
+
+    </tr>
+    </thead>
+    <tbody>
+    <% @actors.each do |x| %>
+
+      <tr>
+        <td> <%=x.first_name%></td>
+
+        <td> <%=x.last_name%></td>
+
+        <td> Actor</td>
+
+
+
+        <td> <%= link_to 'Show','/actors/' + x.id.to_s %></td>
+
+        <td><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end%>
+
+      <% @directors.each do |x| %>
+
+        <tr>
+          <td> <%=x.first_name%></td>
+
+          <td> <%=x.last_name%></td>
+
+          <td> Director</td>
+
+
+          <td> <%= link_to 'Show','/directors/' + x.id.to_s %></td>
+
+          <td><%= link_to 'Destroy', x, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+<% end%>
+    </tbody>
+  </table>

@@ -1,8 +1,12 @@
 class PersonsController < ApplicationController
   def new
   end
+  def show_all
+    @actors = Actor.all
+    @directors = Director.all
+  end
   def create
-    if params[:rol] == 'actor' ? true : false
+    if params[:rol] == 'actor'
       @actor = Actor.new(actor_params)
 
       respond_to do |format|
@@ -15,7 +19,7 @@ class PersonsController < ApplicationController
         end
       end
     end
-    if params[:rol] == 'director' ? true : false
+    if params[:rol] == 'director'
       @director = Director.new(director_params)
 
       respond_to do |format|
@@ -38,7 +42,10 @@ class PersonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def director_params
-      params.require(:person).permit(:first_name, :last_name, :birth_date, :description)
+      params.permit(:first_name, :last_name, :birth_date, :description)
     end
+  def actor_params
+    params.permit(:first_name, :last_name, :birth_date, :description)
+  end
 
 end
